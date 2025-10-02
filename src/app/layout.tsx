@@ -1,4 +1,7 @@
 import type { Metadata } from "next";
+
+import Navigation from "@/components/Navigation";
+
 import "@styles/global.scss";
 
 export const metadata: Metadata = {
@@ -14,6 +17,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+        <Navigation />
         <main>
           {children}
         </main>
