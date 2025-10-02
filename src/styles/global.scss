@@ -1,0 +1,22 @@
+// Resources
+@use './resources/breakpoint.scss';
+@use './resources/color.scss';
+@use './resources/global-styles.scss';
+
+// Global styles
+
+body {
+  background-color: global-styles.$site-bg;
+  color: global-styles.$site-text;
+  font-family: 'Geist Sans', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  background-color: global-styles.$site-main-bg;
+  min-height: 100vh;
+  padding: 2rem;
+  max-width: breakpoint.$main-width;
+  margin: 0 auto;
+}
