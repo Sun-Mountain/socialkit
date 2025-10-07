@@ -1,0 +1,24 @@
+@use './breakpoint.scss';
+@use './color.scss';
+
+$site-bg: color.$dun;
+$site-main-bg: color.$seasalt;
+$site-text: color.$text;
+$site-link: color.$blue-munsell;
+$site-link-hover: color.$hookers-green;
+
+$nav-bg: color.$primary;
+$nav-text: color.$seasalt;
+
+$footer-bg: color.$jet;
+$footer-text: color.$seasalt;
+
+$button-bg: color.$primary;
+$button-bg-hover: color.$blue-munsell;
+$button-text: color.$seasalt;
+$button-border: none;
+$button-border-hover: none;
+$button-box-shadow: none;
+$button-box-shadow-hover: none;
+
+$header-color: color.$primary;

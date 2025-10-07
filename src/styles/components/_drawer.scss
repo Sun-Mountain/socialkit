@@ -1,0 +1,42 @@
+@use '../resources/breakpoint.scss' as breakpoint;
+@use '../resources/color.scss' as color;
+
+.drawer-content {
+  min-width: breakpoint.$xxs;
+
+  ul {
+    li {
+      a, a:visited {
+        color: color.$text;
+        display: inline-block;
+        font-weight: 600;
+        margin: auto 0;
+        padding: 1rem;
+        text-align: center;
+        text-decoration: none;
+        transition: color 0.3s ease;
+        width: 100%;
+
+        &:hover {
+          background-color: color.$hookers-green;
+          color: color.$seasalt;
+        }
+
+        svg {
+          vertical-align: middle;
+          margin-right: 0.5rem;
+        }
+      }
+    }
+
+    li + li {
+      border-top: 1px solid color.$dun;
+    }
+  }
+}
+
+.drawer-btn-container {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1rem;
+}
