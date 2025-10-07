@@ -1,0 +1,16 @@
+@use '../resources/color.scss' as color;
+
+footer {
+  li {
+    margin-top: 0.5rem;
+  }
+
+  a, a:visited {
+    color: color.$seasalt;
+    display: inline-block;
+
+    &:hover {
+      color: color.$blue-munsell;
+    }
+  }
+}

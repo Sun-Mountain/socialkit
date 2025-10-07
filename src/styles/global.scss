@@ -6,6 +6,7 @@
 // Components
 @forward './components/button.scss';
 @forward './components/drawer.scss';
+@forward './components/footer.scss';
 @forward './components/navigation.scss';
 
 // Global styles
@@ -33,7 +34,7 @@ h1, h2, h3, h4, h5, h6 {
 
 main {
   background-color: global-styles.$site-main-bg;
-  min-height: 100vh;
+  min-height: 70vh;
   padding: 2rem;
   max-width: breakpoint.$main-width;
   margin: 0 auto;
