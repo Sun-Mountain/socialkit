@@ -1,0 +1,12 @@
+@use '../resources/breakpoint.scss' as breakpoint;
+@use '../resources/color.scss' as color;
+
+.drawer-content {
+  min-width: breakpoint.$xxs;
+}
+
+.drawer-btn-container {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1rem;
+}

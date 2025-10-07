@@ -3,6 +3,9 @@
 @use './resources/color.scss';
 @use './resources/global-styles.scss';
 
+// Components
+@forward './components/button.scss';
+@forward './components/drawer.scss';
 @forward './components/navigation.scss';
 
 // Global styles
@@ -29,7 +32,9 @@ main {
 nav {
   background-color: global-styles.$nav-bg;
   color: global-styles.$nav-text;
+  display: flex;
+  justify-content: space-between;
   margin: 0 auto;
   max-width: breakpoint.$main-width;
-  padding: 1rem 2rem;
+  padding: 0 2rem;
 }

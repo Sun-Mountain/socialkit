@@ -1,8 +1,8 @@
 'use client';
 
 import { useState } from "react";
-import Button from "@ui/Button";
-import { Drawer } from "@ui/Drawer";
+import Button from "@/components/_ui/Button";
+import { Drawer } from "@/components/_ui/Drawer";
 import { Menu } from "@mui/icons-material";
 
 import { useWindowSize } from "@helpers/useWindowSize";
@@ -19,7 +19,7 @@ const Navigation = () => {
   return (
     <nav>
       <div className="nav-logo">
-        <h1>Student Rooster</h1>
+        <h1>Social Kit</h1>
       </div>
         <>
           <Button

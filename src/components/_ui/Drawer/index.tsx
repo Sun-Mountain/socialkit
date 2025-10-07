@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 import { Drawer as UIDrawer } from "@mui/material";
-import Button from "@ui/Button";
+import Button from "@/components/_ui/Button";
 import { Close } from "@mui/icons-material";
 
 interface DrawerProps {
@@ -20,7 +20,7 @@ export const Drawer = ({
 }: DrawerProps) => {
   return (
     <UIDrawer open={drawerOpen} onClose={toggleDrawer} anchor={anchor}>
-      <div className="drawer-nav" aria-label={ariaLabel}>
+      <div className="drawer-content" aria-label={ariaLabel}>
         {toggleDrawer && (
           <div className="drawer-btn-container">
             <Button buttonAction={toggleDrawer} className="icon">
