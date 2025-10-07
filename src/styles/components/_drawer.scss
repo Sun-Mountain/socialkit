@@ -6,6 +6,9 @@
 
   ul {
     li {
+      display: flex;
+      justify-content: center;
+
       a, a:visited {
         color: color.$text;
         display: inline-block;
@@ -21,11 +24,10 @@
           background-color: color.$hookers-green;
           color: color.$seasalt;
         }
+      }
 
-        svg {
-          vertical-align: middle;
-          margin-right: 0.5rem;
-        }
+      button {
+        margin-top: 0.5rem;
       }
     }
 
