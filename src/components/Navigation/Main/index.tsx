@@ -1,9 +1,10 @@
 'use client';
 
 import { useState } from "react";
+import { Menu } from "@mui/icons-material";
 import { Button } from "@/components/_ui/Button";
 import { Drawer } from "@/components/_ui/Drawer";
-import { Menu } from "@mui/icons-material";
+import { MainNavLinks } from "./Links";
 
 import { useWindowSize } from "@helpers/useWindowSize";
 
@@ -22,21 +23,28 @@ const Navigation = () => {
         <h1>Social Kit</h1>
       </div>
         <>
-          <Button
-            buttonAction={toggleNav}
-            id="navigation-btn"
-            className="icon"
-            ariaLabel="Open navigation menu"
-          >
-            <Menu />
-          </Button>
-          <Drawer
-            drawerOpen={isNavOpen}
-            toggleDrawer={toggleNav}
-            ariaLabel="Navigation Menu"
-          >
-            Boop
-          </Drawer>
+          {(windowSize.width && windowSize.width > 768) ? (
+            <MainNavLinks />
+          ) : null}
+          {(windowSize.width && windowSize.width <= 768) ? (
+            <>
+              <Button
+                buttonAction={toggleNav}
+                id="navigation-btn"
+                className="icon"
+                ariaLabel="Open navigation menu"
+              >
+                <Menu />
+              </Button>
+              <Drawer
+                drawerOpen={isNavOpen}
+                toggleDrawer={toggleNav}
+                ariaLabel="Navigation Menu"
+              >
+                <MainNavLinks />
+              </Drawer>
+            </>
+          ) : null}
         </>
     </nav>
   );

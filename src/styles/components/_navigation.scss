@@ -14,4 +14,27 @@ nav {
     color: globals.$site-main-bg;
     margin: 1rem 0;
   }
+
+  ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      a, a:visited {
+        color: globals.$nav-text;
+        display: inline-block;
+        font-weight: 600;
+        padding: 1.25rem;
+        text-decoration: none;
+        transition: color 0.3s ease;
+
+        &:hover {
+          background-color: globals.$nav-text;
+          color: globals.$nav-bg;
+        }
+      }
+    }
+  }
 }
