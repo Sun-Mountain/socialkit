@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 
+import Providers from "@/components/Providers";
 import Navigation from "@/components/Navigation/Main";
 import Footer from "@/components/Footer";
 
@@ -17,13 +18,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
-        <Navigation />
-        <main>
-          {children}
-        </main>
-        <Footer />
-      </body>
+      <Providers>
+        <body>
+          <Navigation />
+          <main>
+            {children}
+          </main>
+          <Footer />
+        </body>
+      </Providers>
     </html>
   );
 }

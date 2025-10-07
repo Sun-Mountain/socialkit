@@ -12,3 +12,9 @@ export const getUserByEmail = async (email: string) => {
     where: { email },
   });
 };
+
+export const createUser = async (data: Prisma.UserCreateInput): Promise<User> => {
+  return db.user.create({
+    data,
+  });
+}
