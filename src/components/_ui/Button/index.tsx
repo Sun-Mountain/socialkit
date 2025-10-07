@@ -16,7 +16,7 @@ interface ButtonProps {
   type?: "button" | "submit" | "reset";
 }
 
-const Button = ({
+export const Button = ({
   children,
   ariaLabel,
   buttonAction,
@@ -47,6 +47,4 @@ const Button = ({
       {children}
     </button>
   )
-}
-
-export default Button;
+};

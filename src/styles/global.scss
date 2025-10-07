@@ -17,7 +17,17 @@ body {
   padding: 0;
 }
 
+a, a:visited {
+  color: global-styles.$site-link;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: global-styles.$site-link-hover;
+  }
+}
+
 h1, h2, h3, h4, h5, h6 {
+  color: global-styles.$header-color;
   margin: 0;
 }
 

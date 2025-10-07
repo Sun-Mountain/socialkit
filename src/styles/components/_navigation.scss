@@ -1,9 +1,17 @@
+@use "../resources/global-styles.scss" as globals;
+
 nav {
   button {
     border-radius: 0;
+
+    &:hover {
+      background-color: globals.$site-main-bg;
+      color: globals.$button-bg;
+    }
   }
 
   h1 {
+    color: globals.$site-main-bg;
     margin: 1rem 0;
   }
 }

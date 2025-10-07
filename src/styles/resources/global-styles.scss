@@ -4,16 +4,18 @@
 $site-bg: color.$dun;
 $site-main-bg: color.$seasalt;
 $site-text: color.$text;
-$site-link: color.$prussian-blue;
+$site-link: color.$blue-munsell;
 $site-link-hover: color.$hookers-green;
 
 $nav-bg: color.$primary;
 $nav-text: color.$seasalt;
 
 $button-bg: color.$primary;
-$button-bg-hover: color.$accent;
+$button-bg-hover: color.$blue-munsell;
 $button-text: color.$seasalt;
 $button-border: none;
 $button-border-hover: none;
 $button-box-shadow: none;
 $button-box-shadow-hover: none;
+
+$header-color: color.$primary;

@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from "react";
-import Button from "@/components/_ui/Button";
+import { Button } from "@/components/_ui/Button";
 import { Drawer } from "@/components/_ui/Drawer";
 import { Menu } from "@mui/icons-material";
 

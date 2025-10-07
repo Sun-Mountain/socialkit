@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 import { Drawer as UIDrawer } from "@mui/material";
-import Button from "@/components/_ui/Button";
+import { Button } from "@/components/_ui/Button";
 import { Close } from "@mui/icons-material";
 
 interface DrawerProps {
