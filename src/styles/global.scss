@@ -48,3 +48,18 @@ nav {
   max-width: breakpoint.$main-width;
   padding: 0 2rem;
 }
+
+footer {
+  background-color: global-styles.$footer-bg;
+  color: global-styles.$footer-text;
+  max-width: breakpoint.$main-width;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  text-align: center;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
