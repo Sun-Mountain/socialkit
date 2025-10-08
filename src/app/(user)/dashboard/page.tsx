@@ -1,9 +1,10 @@
+import { DashboardContent } from "@/content/Dashboard";
 import { UnderConstruction } from "@/content/UnderConstruction";
 
 const DashboardPage = () => {
   return (
     <>
-      Dashboard
+      <DashboardContent />
       <UnderConstruction />
     </>
   );

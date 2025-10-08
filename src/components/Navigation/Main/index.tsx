@@ -13,6 +13,7 @@ const Navigation = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
 
   const windowSize = useWindowSize();
+  const isMobile = windowSize.width && windowSize.width <= 768;
 
   const { data: session } = useSession();
   const isAuthenticated = !!session;
@@ -31,12 +32,12 @@ const Navigation = () => {
         <h1>Social Kit</h1>
       </div>
         <>
-          {(windowSize.width && windowSize.width > 768) ? (
+          {!isMobile ? (
             <MainNavLinks
               isAuthenticated={isAuthenticated}
+              isMobile={!!isMobile}
               handleSignOut={handleSignOut} />
-          ) : null}
-          {(windowSize.width && windowSize.width <= 768) ? (
+          ) : (
             <>
               <Button
                 buttonAction={toggleNav}
@@ -53,10 +54,12 @@ const Navigation = () => {
               >
                 <MainNavLinks
                   isAuthenticated={isAuthenticated}
-                  handleSignOut={handleSignOut} />
+                  isMobile={isMobile}
+                  handleSignOut={handleSignOut}
+                />
               </Drawer>
             </>
-          ) : null}
+          )}
         </>
     </nav>
   );
