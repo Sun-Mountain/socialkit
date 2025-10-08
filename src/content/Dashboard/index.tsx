@@ -3,9 +3,11 @@
 import { useEffect, useState } from "react";
 import { useSession } from "next-auth/react";
 import { NoProfile } from "./NoProfile";
+import { Landing } from "./Landing";
+import { Profile } from "@prisma/client";
 
 export const DashboardContent = () => {
-  const [profile, setProfile] = useState(null);
+  const [profile, setProfile] = useState<Profile | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const { data: session } = useSession();
   const userId = session?.user.id;
@@ -25,7 +27,7 @@ export const DashboardContent = () => {
       }
       const data = await res.json();
       setIsLoading(false);
-      setProfile(data.profile);
+      setProfile(data);
     } catch (error) {
       // console.error('Error fetching profile:', error);
       setIsLoading(false);
@@ -40,15 +42,22 @@ export const DashboardContent = () => {
 
   return (
     <>
-      <h1>Dashboard</h1>
-      {profile ? (
+      {isLoading && <p>Loading...</p>}
+      {
+        profile ? (
+          <Landing profile={profile} />
+        ) : (
+          <NoProfile />
+        )
+      }
+      {/* {profile ? (
         <>
           Yay, profile!
         </>
       ) : isLoading ? (
         <p>Loading profile...</p>
       ) : <NoProfile />
-      }
+      } */}
     </>
   );
 }
