@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from "react";
+import { signOut, useSession } from "next-auth/react";
 import { Menu } from "@mui/icons-material";
 import { Button } from "@/components/_ui/Button";
 import { Drawer } from "@/components/_ui/Drawer";
@@ -12,6 +13,14 @@ const Navigation = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
 
   const windowSize = useWindowSize();
+  const isMobile = windowSize.width && windowSize.width <= 768;
+
+  const { data: session } = useSession();
+  const isAuthenticated = !!session;
+
+  const handleSignOut = () => {
+    signOut({ callbackUrl: '/' });
+  }
 
   const toggleNav = () => {
     setIsNavOpen(!isNavOpen);
@@ -23,10 +32,12 @@ const Navigation = () => {
         <h1>Social Kit</h1>
       </div>
         <>
-          {(windowSize.width && windowSize.width > 768) ? (
-            <MainNavLinks />
-          ) : null}
-          {(windowSize.width && windowSize.width <= 768) ? (
+          {!isMobile ? (
+            <MainNavLinks
+              isAuthenticated={isAuthenticated}
+              isMobile={!!isMobile}
+              handleSignOut={handleSignOut} />
+          ) : (
             <>
               <Button
                 buttonAction={toggleNav}
@@ -41,10 +52,14 @@ const Navigation = () => {
                 toggleDrawer={toggleNav}
                 ariaLabel="Navigation Menu"
               >
-                <MainNavLinks />
+                <MainNavLinks
+                  isAuthenticated={isAuthenticated}
+                  isMobile={isMobile}
+                  handleSignOut={handleSignOut}
+                />
               </Drawer>
             </>
-          ) : null}
+          )}
         </>
     </nav>
   );

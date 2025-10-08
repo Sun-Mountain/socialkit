@@ -24,6 +24,7 @@ export const Button = ({
   defaultDisabled = false,
   id,
   type = "button",
+  ...props
 }: ButtonProps) => {
 
   // TODO:
@@ -43,6 +44,7 @@ export const Button = ({
       id={id}
       onClick={handleClick}
       type={type}
+      {...props}
     >
       {children}
     </button>
