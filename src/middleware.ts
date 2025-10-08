@@ -15,6 +15,19 @@ export async function middleware(req: NextRequest) {
     return NextResponse.redirect(new URL('/sign-in', req.url));
   }
 
+  switch (token.role) {
+    case 'USER':
+      if (nextUrl.pathname.startsWith('/admin')) {
+        return NextResponse.redirect(new URL('/dashboard', req.url));
+      }
+      break;
+    case 'SUPER':
+      // SUPER users can access everything
+      break;
+    default:
+      return NextResponse.redirect(new URL('/sign-in', req.url));
+  }
+
   return NextResponse.next();
 }
 

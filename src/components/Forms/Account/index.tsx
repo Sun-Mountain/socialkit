@@ -6,7 +6,6 @@ import { signIn } from 'next-auth/react';
 
 import { Button } from '@/components/_ui/Button';
 import { TextField } from '@/components/_ui/TextField';
-import error from 'next/error';
 
 interface AccountFormProps {
   signInForm?: boolean;

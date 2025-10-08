@@ -11,6 +11,9 @@ interface TextFieldProps {
   required?: boolean;
   value?: string;
   variant?: "outlined" | "filled" | "standard";
+  rows?: number;
+  multiline?: boolean;
+  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 export const TextField = (props: TextFieldProps) => {
