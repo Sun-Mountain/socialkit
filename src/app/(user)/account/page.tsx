@@ -1,9 +1,10 @@
-import { UnderConstruction } from "@/content/UnderConstruction";
+import { AccountSettings } from "@/content/AccountSettings";
+
 
 const AccountPage = () => {
   return (
     <>
-      <UnderConstruction />
+      <AccountSettings />
     </>
   );
 }

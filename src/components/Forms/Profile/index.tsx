@@ -1,11 +1,17 @@
 import { FC, useState } from "react";
-import { getSession, useSession } from "next-auth/react";
+import { getSession } from "next-auth/react";
 import { TextField } from "@/components/_ui/TextField";
 import { Button } from "@/components/_ui/Button";
-import { json } from "stream/consumers";
+import { Profile } from "@prisma/client";
 
-export const ProfileForm: FC = () => {
+export const ProfileForm: FC<{ profile?: Profile | null, updateProfile?: boolean }> = ({ profile, updateProfile }) => {
   const [isLoading, setIsLoading] = useState(false);
+  const [profileData, setProfileData] = useState<Partial<Profile>>({
+    firstName: profile?.firstName || '',
+    lastName: profile?.lastName || '',
+    displayName: profile?.displayName || '',
+    bio: profile?.bio || '',
+  });
 
   const onSubmit = async (event: {
     preventDefault: () => void; currentTarget: HTMLFormElement | undefined;
@@ -56,7 +62,8 @@ export const ProfileForm: FC = () => {
       <TextField
         label="First Name"
         name="firstName"
-        placeholder="Enter your first name"
+        defaultValue={profile?.firstName || undefined}
+        helperText="Enter your first name"
         type="text"
         fullWidth
         margin="normal"
@@ -64,6 +71,7 @@ export const ProfileForm: FC = () => {
       <TextField
         label="Last Name"
         name="lastName"
+        defaultValue={profile?.lastName || ''}
         placeholder="Enter your last name"
         type="text"
         fullWidth
@@ -72,6 +80,7 @@ export const ProfileForm: FC = () => {
       <TextField
         label="Display Name"
         name="displayName"
+        defaultValue={profile?.displayName || ''}
         placeholder="Enter your display name"
         type="text"
         fullWidth
@@ -80,6 +89,7 @@ export const ProfileForm: FC = () => {
       <TextField
         label="About Me"
         name="bio"
+        defaultValue={profile?.bio || ''}
         placeholder="Tell us about yourself"
         type="text"
         fullWidth
@@ -88,7 +98,9 @@ export const ProfileForm: FC = () => {
         rows={4}
       />
       <Button type="submit" defaultDisabled={isLoading}>
-        {isLoading ? 'Saving...' : 'Save Profile'}
+        { isLoading ? (  <span>Saving...</span>  ) :
+          updateProfile ? (  <span>Save Profile</span>  ) :
+          (  <span>Create Profile</span>  ) }
       </Button>
     </form>
   );

@@ -1,13 +1,13 @@
 'use client';
 
+import { ProfileForm } from "@/components/Forms/Profile";
+
 import { useEffect, useState } from "react";
 import { useSession } from "next-auth/react";
-import { NoProfile } from "./NoProfile";
-import { Landing } from "./Landing";
 import { Profile } from "@prisma/client";
 import { getUserProfile } from "@/helpers/queries/userProfile";
 
-export const DashboardContent = () => {
+export const AccountSettings = () => {
   const [profile, setProfile] = useState<Profile | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const { data: session } = useSession();
@@ -21,12 +21,8 @@ export const DashboardContent = () => {
 
   return (
     <>
-      {profile ? (
-          <Landing profile={profile} />
-      ) : isLoading ? (
-        <p>Loading profile...</p>
-      ) : <NoProfile />
-      }
+      <h2>Account Settings</h2>
+      <ProfileForm updateProfile profile={profile} />
     </>
   );
 }

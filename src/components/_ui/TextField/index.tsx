@@ -4,6 +4,8 @@ interface TextFieldProps {
   label: string;
   name: string;
   defaultDisabled?: boolean;
+  defaultValue?: string;
+  helperText?: string;
   placeholder?: string;
   type?: 'text' | 'email' | 'password' | 'number' | 'tel' | 'url';
   fullWidth?: boolean;
