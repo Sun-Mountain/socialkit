@@ -1,3 +1,6 @@
+'use client';
+
+import { ChangeEvent, useState } from "react";
 import { TextField as TextFieldUI } from "@mui/material";
 
 interface TextFieldProps {
@@ -15,9 +18,16 @@ interface TextFieldProps {
   variant?: "outlined" | "filled" | "standard";
   rows?: number;
   multiline?: boolean;
-  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
 }
 
 export const TextField = (props: TextFieldProps) => {
-  return <TextFieldUI {...props} />;
+  const [value, setValue] = useState(props.value);
+
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+    setValue(event.target.value);
+    props.onChange?.(event);
+  };
+
+  return <TextFieldUI  {...props} value={value} onChange={handleChange} />;
 };

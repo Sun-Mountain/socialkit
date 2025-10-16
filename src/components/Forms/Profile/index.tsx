@@ -62,7 +62,6 @@ export const ProfileForm: FC<{ profile?: Profile | null, updateProfile?: boolean
       <TextField
         label="First Name"
         name="firstName"
-        defaultValue={profile?.firstName || undefined}
         helperText="Enter your first name"
         type="text"
         fullWidth
@@ -71,7 +70,6 @@ export const ProfileForm: FC<{ profile?: Profile | null, updateProfile?: boolean
       <TextField
         label="Last Name"
         name="lastName"
-        defaultValue={profile?.lastName || ''}
         placeholder="Enter your last name"
         type="text"
         fullWidth
@@ -80,7 +78,6 @@ export const ProfileForm: FC<{ profile?: Profile | null, updateProfile?: boolean
       <TextField
         label="Display Name"
         name="displayName"
-        defaultValue={profile?.displayName || ''}
         placeholder="Enter your display name"
         type="text"
         fullWidth
@@ -89,7 +86,6 @@ export const ProfileForm: FC<{ profile?: Profile | null, updateProfile?: boolean
       <TextField
         label="About Me"
         name="bio"
-        defaultValue={profile?.bio || ''}
         placeholder="Tell us about yourself"
         type="text"
         fullWidth
