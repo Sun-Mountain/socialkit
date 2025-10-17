@@ -29,7 +29,8 @@ const Navigation = () => {
 
   return (
     <nav>
-      <div className="nav-logo">
+      Navigation
+      {/* <div className="nav-logo">
         <h1>Social Kit</h1>
       </div>
       <>
@@ -52,7 +53,7 @@ const Navigation = () => {
             handleSignOut={handleSignOut}
           />
         </Drawer>
-      </>
+      </> */}
       {/* <div className="nav-logo">
         <h1>Social Kit</h1>
       </div>

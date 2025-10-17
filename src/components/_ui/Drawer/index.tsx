@@ -22,7 +22,7 @@ export const Drawer = ({
 }: DrawerProps) => {
   return (
     <UIDrawer open={drawerOpen} onClose={toggleDrawer} anchor={anchor}>
-      <div className={`drawer-content ${className}`} aria-label={ariaLabel}>
+      {/* <div className={`drawer-content ${className}`} aria-label={ariaLabel}>
         {toggleDrawer && (
           <div className="drawer-btn-container">
             <Button buttonAction={toggleDrawer} className="icon">
@@ -31,7 +31,7 @@ export const Drawer = ({
           </div>
         )}
         {children}
-      </div>
+      </div> */}
     </UIDrawer>
   );
 };
