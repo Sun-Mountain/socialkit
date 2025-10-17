@@ -1,8 +1,9 @@
 'use client';
 
 import { useState } from "react";
+import Link from "next/link";
 import { signOut, useSession } from "next-auth/react";
-import { Menu } from "@mui/icons-material";
+import { Login, Pets } from "@mui/icons-material";
 import { Button } from "@/components/_ui/Button";
 import { Drawer } from "@/components/_ui/Drawer";
 import { MainNavLinks } from "./Links";
@@ -29,64 +30,20 @@ const Navigation = () => {
 
   return (
     <nav>
-      Navigation
-      {/* <div className="nav-logo">
-        <h1>Social Kit</h1>
+      nav
+      {/* <div></div>
+      <div id="site-logo">
+        <Link href={isAuthenticated ? "/dashboard" : "/"}>
+          <Pets />
+        </Link>
       </div>
-      <>
-        <Button
-          buttonAction={toggleNav}
-          id="navigation-btn"
-          className="icon"
-          ariaLabel="Open navigation menu"
-        >
-          <Menu />
-        </Button>
-        <Drawer
-          drawerOpen={isNavOpen}
-          toggleDrawer={toggleNav}
-          ariaLabel="Navigation Menu"
-        >
-          <MainNavLinks
-            isAuthenticated={isAuthenticated}
-            isMobile={!!isMobile}
-            handleSignOut={handleSignOut}
-          />
-        </Drawer>
-      </> */}
-      {/* <div className="nav-logo">
-        <h1>Social Kit</h1>
-      </div>
-        <>
-          {!isMobile ? (
-            <MainNavLinks
-              isAuthenticated={isAuthenticated}
-              isMobile={!!isMobile}
-              handleSignOut={handleSignOut} />
-          ) : (
-            <>
-              <Button
-                buttonAction={toggleNav}
-                id="navigation-btn"
-                className="icon"
-                ariaLabel="Open navigation menu"
-              >
-                <Menu />
-              </Button>
-              <Drawer
-                drawerOpen={isNavOpen}
-                toggleDrawer={toggleNav}
-                ariaLabel="Navigation Menu"
-              >
-                <MainNavLinks
-                  isAuthenticated={isAuthenticated}
-                  isMobile={isMobile}
-                  handleSignOut={handleSignOut}
-                />
-              </Drawer>
-            </>
-          )}
-        </> */}
+      <div className="nav-links-container">
+        <MainNavLinks
+          isAuthenticated={isAuthenticated}
+          isMobile={!!isMobile}
+          handleSignOut={handleSignOut}
+        />
+      </div> */}
     </nav>
   );
 }

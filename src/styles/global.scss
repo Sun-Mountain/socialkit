@@ -35,7 +35,6 @@ h1, h2, h3, h4, h5, h6 {
 main {
   background-color: global-styles.$site-main-bg;
   min-height: 70vh;
-  padding: 2rem;
   max-width: breakpoint.$main-width;
   margin: 0 auto;
 }
@@ -45,7 +44,7 @@ footer {
   color: global-styles.$footer-text;
   max-width: breakpoint.$main-width;
   margin: 0 auto;
-  padding: 1rem 2rem;
+  padding: 1rem 0;
   text-align: center;
 }
 

@@ -1,6 +1,15 @@
-// @use "../resources/breakpoint.scss" as breakpoint;
-// @use "../resources/color.scss" as color;
-// @use "../resources/global-styles.scss" as globals;
+@use "../resources/breakpoint.scss" as breakpoint;
+@use "../resources/color.scss" as color;
+@use "../resources/global-styles.scss" as globals;
+
+nav {
+  background-color: globals.$site-main-bg;
+  color: globals.$site-text;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: breakpoint.$main-width;
+}
 
 // nav {
 //   background-color: globals.$nav-bg;
@@ -9,7 +18,27 @@
 //   justify-content: space-between;
 //   margin: 0 auto;
 //   max-width: breakpoint.$main-width;
-//   padding: 0 2rem;
+//   height: 46px;
+
+//   a, a:visited {
+//     color: globals.$nav-text;
+//     display: inline-block;
+//     font-weight: 600;
+//     line-height: 28px;
+//     padding: 0.5rem 1rem;
+//     text-decoration: none;
+
+//     svg {
+//       height: 28px;
+//       width: 28px;
+//       vertical-align: middle;
+//     }
+
+//     &:hover {
+//       background-color: globals.$site-main-bg;
+//       color: globals.$button-bg;
+//     }
+//   }
 
 //   button {
 //     border-radius: 0;
@@ -20,55 +49,28 @@
 //     }
 //   }
 
+//   div {
+//     width: 33.33%;
+//   }
+
 //   h1 {
 //     color: globals.$site-main-bg;
 //     margin-top: 0.5rem;
 //   }
+
+//   .nav-links {
+//     display: flex;
+//     justify-content: flex-end;
+//   }
+
+//   #site-logo {
+//     display: flex;
+//     justify-content: center;
+//   }
 // }
 
-// .drawer-content {
-//   ul {
-//     li {
-//       display: flex;
-//       justify-content: center;
-
-
-//       a, a:visited {
-//         color: color.$text;
-//         display: inline-block;
-//         font-weight: 600;
-//         // font-size: 20px;
-//         margin: auto 0;
-//         padding: 1rem 0;
-//         text-align: center;
-//         text-decoration: none;
-//         transition: color 0.3s ease;
-//         width: 100%;
-
-//         &.icon-link {
-//           display: inline-block;
-          
-//           span {
-//             display: inline-block;
-//             vertical-align: bottom;
-//           }
-
-//           svg {
-//             height: 22px;
-//             width: 22px;
-//             vertical-align: middle;
-//           }
-//         }
-
-//         &:hover {
-//           background-color: color.$hookers-green;
-//           color: color.$seasalt;
-//         }
-//       }
-
-//       button {
-//         margin-top: 0.5rem;
-//       }
-//     }
-//   }
+// .nav-links-container {
+//   display: flex;
+//   flex-direction: row-reverse;
+//   margin-right: 2rem;
 // }

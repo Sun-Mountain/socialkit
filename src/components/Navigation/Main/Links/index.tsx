@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Link from "next/link";
-import { AccountCircle, Home, Logout, Settings } from "@mui/icons-material";
-import { Menu, MenuItem } from "@mui/material";
+import { AccountCircle, Home, Login, Logout, Settings } from "@mui/icons-material";
+import { Avatar, Menu, MenuItem } from "@mui/material";
 import { Button } from "@/components/_ui/Button";
 
 interface MainNavProps {
@@ -26,19 +26,43 @@ export const MainNavLinks = ({
   }
 
   return (
-    // <ul>
-    //   <li>
-    //     <Link className="icon-link" href={isAuthenticated ? "/dashboard" : "/"}>
-    //       <Home /> Home
+    <div></div>
+    // <div className="nav-links">
+    //   {isAuthenticated ? (
+    //     <div className="menu-container">
+    //       <Button 
+    //         aria-controls={open ? 'account-menu' : undefined}
+    //         aria-haspopup="true"
+    //         buttonAction={handleClick}
+    //       >
+    //         <Avatar sx={{ width: 26, height: 26 }} />
+    //       </Button>
+    //       <Menu
+    //         id="account-menu"
+    //         anchorEl={anchorEl}
+    //         open={open}
+    //         onClose={handleClose}
+    //       >
+    //         <MenuItem onClick={handleClose} component={Link} href="/account">
+    //           <Settings fontSize="small" style={{ marginRight: '8px' }} />
+    //           Settings
+    //         </MenuItem>
+    //         <MenuItem onClick={() => { handleClose(); handleSignOut(); }}>
+    //           <Logout fontSize="small" style={{ marginRight: '8px' }} />
+    //           Sign Out
+    //         </MenuItem>
+    //       </Menu>
+    //     </div>
+    //   ) : (
+    //     <Link href="/sign-in">
+    //       <Login /> Sign In
     //     </Link>
-    //   </li>
-    //   <li>
-    //     {isAuthenticated ? (
-    //       <Button buttonAction={handleSignOut}>Sign Out</Button>
-    //     ) : (
-    //       <Link href="/sign-in">Sign In</Link>
-    //     )}
-    //   </li>
+    //   )}
+    // </div>
+  )
+}
+
+
       {/* <li>
         <Link href={isAuthenticated ? "/dashboard" : "/"}>
           <Home /> {isMobile ? 'Home' : null}
@@ -91,7 +115,4 @@ export const MainNavLinks = ({
         <li>
           <Link href="/sign-in">Sign In</Link>
         </li>
-      )} */}
-    </ul>
-  )
-}
+      )} */
