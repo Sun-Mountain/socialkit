@@ -22,7 +22,7 @@ interface TextFieldProps {
 }
 
 export const TextField = (props: TextFieldProps) => {
-  const [value, setValue] = useState(props.value);
+  const [value, setValue] = useState(props.value || '');
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     setValue(event.target.value);

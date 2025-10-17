@@ -28,8 +28,8 @@ export const MainNavLinks = ({
   return (
     <ul>
       <li>
-        <Link href={isAuthenticated ? "/dashboard" : "/"}>
-          <Home /> {isMobile ? 'Home' : null}
+        <Link className="icon-link" href={isAuthenticated ? "/dashboard" : "/"}>
+          <Home /> {isMobile ? (<span>Home</span>) : null}
         </Link>
       </li>
       {isAuthenticated ? (

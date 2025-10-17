@@ -13,12 +13,28 @@
         color: color.$text;
         display: inline-block;
         font-weight: 600;
+        // font-size: 20px;
         margin: auto 0;
-        padding: 1rem;
+        padding: 1rem 0;
         text-align: center;
         text-decoration: none;
         transition: color 0.3s ease;
         width: 100%;
+
+        &.icon-link {
+          display: inline-block;
+          
+          span {
+            display: inline-block;
+            vertical-align: bottom;
+          }
+
+          svg {
+            height: 22px;
+            width: 22px;
+            vertical-align: middle;
+          }
+        }
 
         &:hover {
           background-color: color.$hookers-green;

@@ -1,10 +1,12 @@
 import { FC, useState } from "react";
+import { useRouter } from 'next/navigation';
 import { getSession } from "next-auth/react";
 import { TextField } from "@/components/_ui/TextField";
 import { Button } from "@/components/_ui/Button";
 import { Profile } from "@prisma/client";
 
 export const ProfileForm: FC<{ profile?: Profile | null, updateProfile?: boolean }> = ({ profile, updateProfile }) => {
+  const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
   const [profileData, setProfileData] = useState<Partial<Profile>>({
     firstName: profile?.firstName || '',
@@ -46,9 +48,9 @@ export const ProfileForm: FC<{ profile?: Profile | null, updateProfile?: boolean
         return;
       } else {
         const responseData = await response.json();
-        console.log('Profile saved successfully:', responseData);
-        // Optionally reset the form or provide user feedback here
-        form.reset();
+        console.log(responseData);
+        setProfileData(responseData);
+        router.push('/dashboard');
       }
     } catch (error) {
       console.error('Error submitting profile form:', error);
@@ -62,6 +64,7 @@ export const ProfileForm: FC<{ profile?: Profile | null, updateProfile?: boolean
       <TextField
         label="First Name"
         name="firstName"
+        value={profileData?.firstName || ''}
         helperText="Enter your first name"
         type="text"
         fullWidth
@@ -70,6 +73,7 @@ export const ProfileForm: FC<{ profile?: Profile | null, updateProfile?: boolean
       <TextField
         label="Last Name"
         name="lastName"
+        value={profile?.lastName || ''}
         placeholder="Enter your last name"
         type="text"
         fullWidth
@@ -78,6 +82,7 @@ export const ProfileForm: FC<{ profile?: Profile | null, updateProfile?: boolean
       <TextField
         label="Display Name"
         name="displayName"
+        value={profile?.displayName || ''}
         placeholder="Enter your display name"
         type="text"
         fullWidth
@@ -86,6 +91,7 @@ export const ProfileForm: FC<{ profile?: Profile | null, updateProfile?: boolean
       <TextField
         label="About Me"
         name="bio"
+        value={profile?.bio || ''}
         placeholder="Tell us about yourself"
         type="text"
         fullWidth
