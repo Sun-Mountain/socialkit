@@ -1,6 +1,16 @@
+@use "../resources/breakpoint.scss" as breakpoint;
+@use "../resources/color.scss" as color;
 @use "../resources/global-styles.scss" as globals;
 
 nav {
+  background-color: globals.$nav-bg;
+  color: globals.$nav-text;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: breakpoint.$main-width;
+  padding: 0 2rem;
+
   button {
     border-radius: 0;
 
@@ -12,30 +22,91 @@ nav {
 
   h1 {
     color: globals.$site-main-bg;
-    margin: 1rem 0;
+    margin-top: 0.5rem;
   }
+}
 
+.drawer-content {
   ul {
-    display: flex;
-
     li {
+      display: flex;
+      justify-content: center;
+
       a, a:visited {
-        color: globals.$nav-text;
+        color: color.$text;
         display: inline-block;
         font-weight: 600;
-        padding: 1.25rem;
+        margin: auto 0;
+        padding: 1rem 0;
+        text-align: center;
         text-decoration: none;
         transition: color 0.3s ease;
+        width: 100%;
 
         &:hover {
-          background-color: globals.$nav-text;
-          color: globals.$nav-bg;
+          background-color: color.$hookers-green;
+          color: color.$seasalt;
+        }
+        
+        &.icon-link {
+          display: inline-block;
+
+          span {
+            display: inline-block;
+            vertical-align: bottom;
+          }
+
+          svg {
+            height: 22px;
+            width: 22px;
+            vertical-align: middle;
+          }
         }
       }
 
       button {
-        padding: 1.25rem;
+        margin-top: 0.5rem;
       }
     }
   }
 }
+
+// nav {
+//   button {
+//     border-radius: 0;
+
+//     &:hover {
+//       background-color: globals.$site-main-bg;
+//       color: globals.$button-bg;
+//     }
+//   }
+
+//   h1 {
+//     color: globals.$site-main-bg;
+//     margin: 1rem 0;
+//   }
+
+//   ul {
+//     display: flex;
+
+//     li {
+//       a, a:visited {
+//         color: globals.$nav-text;
+//         display: inline-block;
+//         font-weight: 600;
+//         padding: 1.25rem;
+//         text-decoration: none;
+//         transition: color 0.3s ease;
+
+//         &:hover {
+//           background-color: globals.$nav-text;
+//           color: globals.$nav-bg;
+//         }
+//       }
+
+//       button {
+//         padding: 1.25rem;
+//       }
+//     }
+//   }
+// }

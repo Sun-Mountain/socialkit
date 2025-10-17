@@ -8,6 +8,7 @@ import { Drawer } from "@/components/_ui/Drawer";
 import { MainNavLinks } from "./Links";
 
 import { useWindowSize } from "@helpers/useWindowSize";
+import { Main } from "next/document";
 
 const Navigation = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
@@ -29,6 +30,30 @@ const Navigation = () => {
   return (
     <nav>
       <div className="nav-logo">
+        <h1>Social Kit</h1>
+      </div>
+      <>
+        <Button
+          buttonAction={toggleNav}
+          id="navigation-btn"
+          className="icon"
+          ariaLabel="Open navigation menu"
+        >
+          <Menu />
+        </Button>
+        <Drawer
+          drawerOpen={isNavOpen}
+          toggleDrawer={toggleNav}
+          ariaLabel="Navigation Menu"
+        >
+          <MainNavLinks
+            isAuthenticated={isAuthenticated}
+            isMobile={!!isMobile}
+            handleSignOut={handleSignOut}
+          />
+        </Drawer>
+      </>
+      {/* <div className="nav-logo">
         <h1>Social Kit</h1>
       </div>
         <>
@@ -60,7 +85,7 @@ const Navigation = () => {
               </Drawer>
             </>
           )}
-        </>
+        </> */}
     </nav>
   );
 }

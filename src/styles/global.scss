@@ -40,16 +40,6 @@ main {
   margin: 0 auto;
 }
 
-nav {
-  background-color: global-styles.$nav-bg;
-  color: global-styles.$nav-text;
-  display: flex;
-  justify-content: space-between;
-  margin: 0 auto;
-  max-width: breakpoint.$main-width;
-  padding: 0 2rem;
-}
-
 footer {
   background-color: global-styles.$footer-bg;
   color: global-styles.$footer-text;

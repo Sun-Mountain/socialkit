@@ -8,6 +8,7 @@ interface DrawerProps {
   drawerOpen: boolean;
   ariaLabel: string;
   anchor?: 'left' | 'right' | 'top' | 'bottom';
+  className?: string;
   toggleDrawer?: () => void;
 }
 
@@ -16,11 +17,12 @@ export const Drawer = ({
   ariaLabel,
   drawerOpen = false,
   anchor = 'right',
+  className = '',
   toggleDrawer
 }: DrawerProps) => {
   return (
     <UIDrawer open={drawerOpen} onClose={toggleDrawer} anchor={anchor}>
-      <div className="drawer-content" aria-label={ariaLabel}>
+      <div className={`drawer-content ${className}`} aria-label={ariaLabel}>
         {toggleDrawer && (
           <div className="drawer-btn-container">
             <Button buttonAction={toggleDrawer} className="icon">
