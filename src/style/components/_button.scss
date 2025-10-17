@@ -1,0 +1,16 @@
+@use "../_resources/color";
+
+button {
+  background-color: color.$main-bg;
+  border: 1px solid color.$main-bg;
+  color: color.$button-text;
+
+  &:hover {
+    background-color: color.$button-hover-bg;
+    border-color: color.$button-hover-border;
+    border-radius: 4px;
+    color: color.$button-hover-text;
+    cursor: pointer;
+    margin: auto 0;
+  }
+}

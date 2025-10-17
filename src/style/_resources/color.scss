@@ -1,0 +1,49 @@
+$jet: rgba(43, 40, 33, 1);
+$umber: rgba(98, 76, 60, 1);
+$buff: rgba(217, 172, 139, 1);
+$dun: rgba(227, 207, 180, 1);
+$khaki: rgba(177, 165, 141, 1);
+
+$rich-black: rgba(0, 18, 25, 1);
+$prussian-blue: rgba(36, 61, 92, 1);
+$midnight-green: rgba(0, 95, 115, 1);
+$true-blue: rgba(0, 153, 219, 1);
+$dark-cyan: rgba(10, 147, 150, 1);
+$tiffany-blue: rgba(148, 210, 189, 1);
+$hookers-green: rgba(62, 105, 88, 1);
+$vanilla: rgba(233, 216, 166, 1);
+$citron: rgba(224, 200, 114, 1);
+$gamboge: rgba(238, 155, 0, 1);
+$caramel: rgba(212, 128, 77, 1);
+$alloy-orange: rgba(202, 103, 2, 1);
+$rust: rgba(187, 62, 3, 1);
+$rufous: rgba(174, 32, 18, 1);
+$auburn: rgba(155, 34, 38, 1);
+
+$eerie-black: rgba(33, 37, 41, 1);
+$onyx: rgba(52, 58, 64, 1);
+$outer-space: rgba(73, 80, 87, 1);
+$slate-gray: rgba(108, 117, 125, 1);
+$french-gray-2: rgba(173, 181, 189, 1);
+$french-gray: rgba(206, 212, 218, 1);
+$seasalt: rgba(248, 249, 250, 1);
+$antiflash-white: rgba(233, 236, 239, 1);
+$platinum: rgba(222, 226, 230, 1);
+$white: rgba(255, 255, 255, 1);
+
+// Opacity variants
+$vanilla-75: rgba(233, 216, 166, 0.75);
+$tiffany-blue-50: rgba(148, 210, 189, 0.5);
+
+// Color aliases
+$divider: $vanilla-75;
+$logo-color: $gamboge;
+$main-bg: $onyx;
+$primary-text: $seasalt;
+
+$button-text: $vanilla;
+$button-bg: $main-bg;
+$button-border: $main-bg;
+$button-hover-bg: $tiffany-blue-50;
+$button-hover-text: $seasalt;
+$button-hover-border: $tiffany-blue-50;
