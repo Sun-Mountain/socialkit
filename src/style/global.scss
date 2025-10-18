@@ -2,6 +2,7 @@
 @use "./_resources/color.scss" as color;
 
 @forward "./components/_button.scss";
+@forward "./components/footer.scss";
 @forward "./components/_navigation.scss";
 
 body {
@@ -16,10 +17,6 @@ body {
   justify-content: center;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  margin: 0;
-}
-
 main, nav {
   height: 100vh;
 }
@@ -27,6 +24,26 @@ main, nav {
 main {
   max-width: breakpoint.$max-width;
   width: 100%;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+a, a:visited {
+  color: color.$link-color;
+  text-decoration: none;
+
+  &:hover {
+    color: color.$link-hover-color;
+    text-decoration: underline;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
 }
 
 #main-content {

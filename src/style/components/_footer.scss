@@ -1,0 +1,22 @@
+@use "../_resources/breakpoint.scss" as bp;
+@use "../_resources/color.scss" as color;
+
+footer {
+  // border-top: 1px solid color.$divider;
+  font-size: 12px;
+  padding: 1rem;
+  max-width: bp.$max-footer;
+
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 0.5rem;
+  }
+
+  li + li {
+    padding-left: 1rem;
+    border-left: 1px solid color.$divider;
+  }
+}

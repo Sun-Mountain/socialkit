@@ -4,6 +4,7 @@ import "@/style/global.scss";
 
 import { Navigation } from "@/components/Navigation";
 import { MainHeader } from "@/components/Navigation/MainHeader";
+import { Footer } from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Social Kit",
@@ -25,6 +26,7 @@ export default function RootLayout({
             {children}
           </div>
         </main>
+        <Footer />
       </body>
     </html>
   );
