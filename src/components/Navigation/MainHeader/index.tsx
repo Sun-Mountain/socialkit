@@ -5,7 +5,11 @@ import { Button } from "@/components/_UI/Button";
 
 import { Notifications, Menu, Pets, Search } from "@mui/icons-material";
 
-export const MainHeader = () => {
+interface MainHeaderProps {
+  isAuthenticated?: boolean;
+}
+
+export const MainHeader = ({ isAuthenticated }: MainHeaderProps) => {
   const mobile = isMobile();
 
   return (
@@ -21,9 +25,11 @@ export const MainHeader = () => {
         <Pets />
       </div>
       <div className="icon-container">
+        {isAuthenticated && (
         <Button>
           <Notifications />
         </Button>
+        )}
       </div>
     </header>
   )

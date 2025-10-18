@@ -1,13 +1,52 @@
-import { ReactNode } from "react";
+'use client';
 
-export interface ButtonProps {
+import {
+  MouseEventHandler,
+  MouseEvent,
+  ReactNode
+} from 'react';
+
+interface ButtonProps {
   children: ReactNode;
+  ariaLabel?: string;
+  buttonAction?: MouseEventHandler<HTMLButtonElement> | undefined;
+  className?: string;
+  defaultDisabled?: boolean;
+  id?: string;
+  type?: "button" | "submit" | "reset";
 }
 
-export const Button = ({ children }: ButtonProps) => {
+export const Button = ({
+  children,
+  ariaLabel,
+  buttonAction,
+  className,
+  defaultDisabled = false,
+  id,
+  type = "button",
+  ...props
+}: ButtonProps) => {
+
+  // TODO:
+  // set up loading state for async actions
+  // connect to disabled??
+  // const [ isLoading, setIsLoading ] = useState(false);
+
+  function handleClick(e: MouseEvent<HTMLButtonElement>) {
+    if (buttonAction) buttonAction(e);
+  }
+
   return (
-    <button>
+    <button
+      aria-label={ariaLabel}
+      className={className}
+      disabled={defaultDisabled}
+      id={id}
+      onClick={handleClick}
+      type={type}
+      {...props}
+    >
       {children}
     </button>
   )
-}
+};

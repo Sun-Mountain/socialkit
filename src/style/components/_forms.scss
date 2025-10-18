@@ -1,0 +1,24 @@
+@use "../_resources/color.scss" as color;
+
+input {
+  background-color: transparent;
+  border: 1px solid color.$platinum;
+  border-radius: 4px;
+  color: color.$primary-text;
+  font-size: 16px;
+  margin: 0 auto 1rem auto;
+  padding: 1rem;
+  width: 85%;
+
+  &::placeholder {
+    color: color.$form-placeholder;
+  }
+}
+
+.form-container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  // margin: 1rem auto;
+  // width: 85%;
+}

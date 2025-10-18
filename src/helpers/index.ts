@@ -35,3 +35,8 @@ export const isMobile = () => {
   const size = useWindowSize();
   return (size.width ?? 0) < 768;
 }
+
+export const isTablet = () => {
+  const size = useWindowSize();
+  return (size.width ?? 0) < 999;
+}
