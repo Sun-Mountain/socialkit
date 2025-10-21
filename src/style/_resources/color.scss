@@ -34,6 +34,7 @@ $white: rgba(255, 255, 255, 1);
 // Opacity variants
 $vanilla-75: rgba(233, 216, 166, 0.75);
 $tiffany-blue-50: rgba(148, 210, 189, 0.5);
+$tiffany-blue-40: rgba(148, 210, 189, 0.4);
 
 // Color aliases
 $divider: $vanilla-75;
@@ -46,9 +47,13 @@ $button-bg: $main-bg;
 $button-border: $main-bg;
 $button-hover-bg: $tiffany-blue-50;
 $button-hover-text: $seasalt;
-$button-hover-border: $tiffany-blue-50;
+$button-hover-border: $tiffany-blue-40;
 
-$link-color: $true-blue;
+$submit-btn-bg: $true-blue;
+$submit-btn-text: $seasalt;
+$submit-btn-border: $true-blue;
+
+$link-color: $tiffany-blue;
 $link-hover-color: $tiffany-blue;
 
 $form-placeholder: $french-gray-2;

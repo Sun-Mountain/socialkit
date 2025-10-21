@@ -40,3 +40,9 @@ export const isTablet = () => {
   const size = useWindowSize();
   return (size.width ?? 0) < 999;
 }
+
+export const betweenMobileAndTablet = () => {
+  const size = useWindowSize();
+  const width = size.width ?? 0;
+  return width >= 768 && width < 999;
+}

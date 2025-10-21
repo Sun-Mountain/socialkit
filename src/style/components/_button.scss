@@ -3,6 +3,7 @@
 button {
   background-color: color.$main-bg;
   border: 1px solid color.$main-bg;
+  border-radius: 4px;
   color: color.$button-text;
 
   &:hover {
@@ -13,4 +14,14 @@ button {
     cursor: pointer;
     margin: auto 0;
   }
+}
+
+.submit-button {
+  background-color: color.$submit-btn-bg;
+  border: 1px solid color.$submit-btn-border;
+  color: color.$submit-btn-text;
+  width: 85%;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: bold;
 }

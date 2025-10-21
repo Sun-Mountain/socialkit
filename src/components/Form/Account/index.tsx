@@ -6,6 +6,7 @@ import { signIn } from 'next-auth/react';
 
 import { Button } from '@/components/_UI/Button';
 import { TextField } from '@/components/_UI/TextField';
+import { AccountFormLinks } from '@/content/Links/AccountForm';
 
 interface AccountFormProps {
   signInForm?: boolean;
@@ -102,6 +103,7 @@ const AccountForm: FC<AccountFormProps> = ({ signInForm, signUpForm }) => {
           {isLoading ? 'Loading...' : (signInForm ? 'Sign In' : 'Sign Up')}
         </Button>
       </form>
+      <AccountFormLinks showSignInLink={!!signUpForm} showSignUpLink={!!signInForm} />
     </div>
   );
 }

@@ -19,6 +19,12 @@ input {
   align-items: center;
   display: flex;
   flex-direction: column;
-  // margin: 1rem auto;
-  // width: 85%;
+  margin: 1.5rem auto;
+
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
 }

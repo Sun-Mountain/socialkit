@@ -1,7 +1,7 @@
 'use client';
 
 import { FooterLinks } from "@/content/Footer";
-import { isMobile, isTablet } from "@/helpers";
+import { isTablet } from "@/helpers";
 
 export const Footer = () => {
   if (isTablet()) {
@@ -10,7 +10,7 @@ export const Footer = () => {
 
   return (
     <footer>
-      <FooterLinks />
+      <FooterLinks location="footer" />
     </footer>
   );
 }
