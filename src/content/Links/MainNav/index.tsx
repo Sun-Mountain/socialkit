@@ -13,7 +13,7 @@ export const MainNavLinks = ({ isAuthenticated }: MainNavLinksProps) => {
             <Link href="/profile">Profile</Link>
           </li>
           <li>
-            <Link href="/settings">Settings</Link>
+            <Link href="/account">Account</Link>
           </li>
         </ul>
       ) : (

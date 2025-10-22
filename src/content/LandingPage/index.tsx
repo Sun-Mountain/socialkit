@@ -4,7 +4,7 @@ import { useSession } from "next-auth/react";
 import { WelcomeMsg } from "@/content/LandingPage/WelcomeMsg";
 import { FooterLinks } from "../Footer";
 
-import AccountForm from "@/components/Form/Account";
+import AccountForm from "@/components/Forms/Account";
 
 export const LandingPageContent = () => {
   const { data: session } = useSession();

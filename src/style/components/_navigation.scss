@@ -15,6 +15,28 @@ nav {
     }
   }
 
+  .footer-links {
+    margin-top: 0.75rem;
+    padding: 0;
+
+    a, a:visited {
+      font-size: 12px;
+      font-weight: 400;
+    }
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      text-align: right;
+      padding: 0;
+      gap: 0;
+    }
+
+    li+li {
+      border-left: none;
+    }
+  }
+
   li+li {
     margin-top: 0.75rem;
   }

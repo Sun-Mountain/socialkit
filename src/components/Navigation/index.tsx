@@ -1,7 +1,7 @@
 'use client';
 
 import { useSession } from "next-auth/react";
-import { isMobile } from "@/helpers";
+import { isMobile, isTablet } from "@/helpers";
 import { FooterLinks } from "@/content/Footer";
 import { MainNavLinks } from "@/content/Links/MainNav";
 
@@ -9,12 +9,13 @@ export const Navigation = () => {
   const { data: session } = useSession();
   const isAuthenticated = !!session;
   const mobile = isMobile();
+  const tablet = isTablet();
 
-  if (!isMobile()) {
+  if (!mobile) {
     return (
       <nav>
         <MainNavLinks isAuthenticated={isAuthenticated} />
-        {mobile && <FooterLinks location="navigation" />}
+        {tablet && <FooterLinks location="navigation" />}
       </nav>
     )
   }
